@@ -30,6 +30,13 @@ class IdApp extends StatelessWidget {
                 color: Colors.amberAccent[300],
                 letterSpacing: 2.0,
               ),
+            ),
+            Text(
+              'Sachintha Dilshan',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 1.0,
+              ),
             )
           ],
         ),
