@@ -10,7 +10,14 @@ void main() {
   ));
 }
 
-class IdApp extends StatelessWidget {
+class IdApp extends StatefulWidget {
+  @override
+  _IdAppState createState() => _IdAppState();
+}
+
+class _IdAppState extends State<IdApp> {
+  int age = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +28,16 @@ class IdApp extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Color.fromRGBO(26, 188, 156, 1.0),
         elevation: 10.0, // box shadow
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            // this is the only way trigger the build function !
+            age += 1;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.greenAccent[400],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 0.0),
@@ -71,7 +88,7 @@ class IdApp extends StatelessWidget {
               height: 10.0, // space between two widget
             ),
             Text(
-              '21',
+              '$age',
               style: TextStyle(
                 color: Colors.white,
                 letterSpacing: 1.0,
